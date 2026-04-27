@@ -8,21 +8,21 @@ type ContactProps = {
 const content = {
   pl: {
     eyebrow: "Kontakt",
-    title: "Sekcja kontaktowa gotowa do podpiecia maila, LinkedIna i GitHuba.",
+    title: "Proszę się zkontaktować przez.",
     description:
-      "Na tym etapie zostawiamy prosty uklad, ktory pozniej mozesz rozwinac o formularz lub linki spolecznosciowe.",
-    email: "Email",
-    github: "GitHub",
-    linkedin: "LinkedIn",
+      "Proszę sie zkontaktować ze mną za pomocą jednej z poniższych metod.",
+    email: "u.budziankou@outlook.com",
+    github: "https://github.com/Dniapro123",
+    linkedin: "*Czasowo w trakcie weryfikacji",
   },
   en: {
     eyebrow: "Contact",
-    title: "Contact section ready for your email, LinkedIn, and GitHub.",
+    title: "Please contact me via the methods below.",
     description:
-      "At this stage we keep a simple layout that you can later expand with a form or social links.",
-    email: "Email",
-    github: "GitHub",
-    linkedin: "LinkedIn",
+      "Please feel free to reach out to me.",
+    email: "u.budziankou@outlook.com",
+    github: "https://github.com/Dniapro123",
+    linkedin: "*Temporary under verification",
   },
 } as const;
 
@@ -34,19 +34,34 @@ function Contact({ language }: ContactProps) {
       <div className="panel">
         <SectionTitle eyebrow={copy.eyebrow} title={copy.title} description={copy.description} />
 
-        <div className="grid gap-5 md:grid-cols-3">
-          <div className="rounded-2xl border border-[var(--color-border)] p-6">
+       <div className="grid gap-5 md:grid-cols-3">
+          <a
+            href={`mailto:${copy.email}`}
+            className="block rounded-2xl border border-[var(--color-border)] p-6 transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-lg"
+          >
+            <p className="mt-2 text-lg font-semibold">Mail:</p>
             <p className="text-sm muted-text">{copy.email}</p>
-            <p className="mt-2 text-lg font-semibold">twoj@email.com</p>
-          </div>
-          <div className="rounded-2xl border border-[var(--color-border)] p-6">
+          </a>
+
+          <a
+            href={copy.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-2xl border border-[var(--color-border)] p-6 transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-lg"
+          >
+            <p className="mt-2 text-lg font-semibold">GitHub:</p>
             <p className="text-sm muted-text">{copy.github}</p>
-            <p className="mt-2 text-lg font-semibold">github.com/twojprofil</p>
-          </div>
-          <div className="rounded-2xl border border-[var(--color-border)] p-6">
+          </a>
+
+          <a
+            href={copy.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-2xl border border-[var(--color-border)] p-6 transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-lg"
+          >
+            <p className="mt-2 text-lg font-semibold">LinkedIn:</p>
             <p className="text-sm muted-text">{copy.linkedin}</p>
-            <p className="mt-2 text-lg font-semibold">linkedin.com/in/twojprofil</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>
