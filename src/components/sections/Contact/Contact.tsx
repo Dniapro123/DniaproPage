@@ -1,5 +1,5 @@
-import type { Language } from "../../App";
-import SectionTitle from "../ui/SectionTitle";
+import type { Language } from "../../../App";
+import SectionTitle from "../../ui/SectionTitle";
 
 type ContactProps = {
   language: Language;

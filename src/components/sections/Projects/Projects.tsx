@@ -1,6 +1,6 @@
-import type { Language } from "../../App";
-import SectionTitle from "../ui/SectionTitle";
-import { projects } from "../../data/projects";
+import type { Language } from "../../../App";
+import SectionTitle from "../../ui/SectionTitle";
+import { projects } from "../../../data/projects";
 
 type ProjectsProps = {
   language: Language;
@@ -51,6 +51,28 @@ function Projects({ language }: ProjectsProps) {
                   </span>
                 ))}
               </div>
+              <div className="mt-6 flex gap-4">
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-[var(--color-accent)] transition hover:underline"
+                  >
+                    GitHub
+                  </a>
+                )}
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-[var(--color-accent)] transition hover:underline"
+                  >
+                    Live Demo
+                  </a>
+                )}
+              </div>  
             </article>
           ))}
         </div>

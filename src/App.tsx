@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
+import Hero from "./components/sections/Hero/Hero";
+import About from "./components/sections/About/About";
 import Technologies from "./components/sections/Technologies";
-import Projects from "./components/sections/Projects";
-import Contact from "./components/sections/Contact";
+import Projects from "./components/sections/Projects/Projects";
+import Contact from "./components/sections/Contact/Contact";
 
 type Theme = "light" | "dark";
 export type Language = "pl" | "en";
@@ -45,8 +45,8 @@ function App() {
     <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300">
       <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[color:var(--color-surface-muted)]/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
-          <a href="#hero" className="text-sm font-semibold uppercase tracking-[0.3em]">
-            Dniapro
+          <a href="#hero" className="text-lg font-semibold uppercase tracking-[0.25em]">
+           Uladzislau Budziankou | dniapro
           </a>
 
           <nav className="flex flex-wrap items-center justify-center gap-4 text-sm md:gap-6">

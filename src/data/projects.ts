@@ -2,13 +2,31 @@ import type { Project } from "../types/project";
 
 export const projects: Project[] = [
   {
+    slug: "lumos-lib",
+    title: {
+      pl: "LumosLib",
+      en: "LumosLib",
+    },
+    description: {
+      pl: "Aplikacja webowa do wyszukiwania książek, przeglądania szczegółów oraz pracy z katalogiem książek. Projekt wykorzystuje Angular, TypeScript, backend Express oraz Google Books API.",
+      en: "A web application for searching books, browsing details, and working with a book catalogue. The project uses Angular, TypeScript, an Express backend, and Google Books API.",
+    },
+    category: {
+      pl: "Projekt w trakcie wdrażania",
+      en: "Deployment in progress",
+    },
+    stack: ["Angular", "TypeScript", "Node.js", "Express", "Prisma", "Google Books API"],
+    githubUrl: "https://github.com/Dniapro123/Lumos-Lib",
+    // liveUrl: "https://tutaj-bedzie-link-do-demo",
+  },
+  {
     slug: "react-api-app",
     title: {
       pl: "React API App",
       en: "React API App",
     },
     description: {
-      pl: "Projekt frontendowy oparty o React i komunikacje z zewnetrznym API.",
+      pl: "Projekt frontendowy oparty o React i komunikację z zewnętrznym API.",
       en: "A frontend project based on React and communication with an external API.",
     },
     category: {
@@ -24,7 +42,7 @@ export const projects: Project[] = [
       en: "Angular API App",
     },
     description: {
-      pl: "Aplikacja zbudowana w Angularze z naciskiem na komponenty i integracje z API.",
+      pl: "Aplikacja zbudowana w Angularze z naciskiem na komponenty i integrację z API.",
       en: "An Angular application focused on components and API integration.",
     },
     category: {
@@ -32,6 +50,7 @@ export const projects: Project[] = [
       en: "Planned project",
     },
     stack: ["Angular", "TypeScript", "API"],
+    githubUrl: "https://github.com/Dniapro123/Lumos-Lib",
   },
   {
     slug: "springboot-plsql-api",
@@ -40,7 +59,7 @@ export const projects: Project[] = [
       en: "Java Spring Boot REST API + PL/SQL",
     },
     description: {
-      pl: "Backendowy projekt pokazujacy prace z Java, Spring Boot, baza danych i logika SQL.",
+      pl: "Backendowy projekt pokazujący pracę z Java, Spring Boot, bazą danych i logiką SQL.",
       en: "A backend project presenting work with Java, Spring Boot, a database, and SQL logic.",
     },
     category: {
@@ -56,7 +75,7 @@ export const projects: Project[] = [
       en: "Python Django App",
     },
     description: {
-      pl: "Projekt webowy w Django pokazujacy backend, routing i strukture aplikacji.",
+      pl: "Projekt webowy w Django pokazujący backend, routing i strukturę aplikacji.",
       en: "A Django web project presenting backend work, routing, and application structure.",
     },
     category: {

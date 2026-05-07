@@ -9,4 +9,6 @@ export type Project = {
   description: LocalizedText;
   category: LocalizedText;
   stack: string[];
+  githubUrl?: string;
+  liveUrl?: string;
 };

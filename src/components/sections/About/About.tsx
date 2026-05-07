@@ -1,5 +1,5 @@
-import type { Language } from "../../App";
-import SectionTitle from "../ui/SectionTitle";
+import type { Language } from "../../../App";
+import SectionTitle from "../../ui/SectionTitle";
 
 type AboutProps = {
   language: Language;
@@ -8,18 +8,18 @@ type AboutProps = {
 const content = {
   pl: {
     eyebrow: "O mnie",
-    title: "Rozwijam sie jako developer, ktory chce rozumiec caly przeplyw aplikacji.",
+    title: "Rozwijam się jako developer, który chce rozumieć cały przepływ aplikacji.",
     description:
-      "Interesuje mnie budowanie pelnych rozwiazan: od interfejsu uzytkownika, przez logike aplikacji, po komunikacje z baza danych i API.",
+      "Interesuje mnie budowanie pełnych rozwiązań: od interfejsu użytkownika, przez logikę aplikacji, po komunikację z bazą danych i API.",
     frontendTitle: "Frontend",
     frontendText:
-      "Chce tworzyc czytelne, responsywne interfejsy i rozwijac dobre nawyki pracy z komponentami.",
+      "Chce tworzyć czytelne, responsywne interfejsy i rozwijać dobre nawyki pracy z komponentami.",
     backendTitle: "Backend",
     backendText:
-      "Zalezy mi na rozumieniu API, baz danych, autoryzacji i organizacji logiki po stronie serwera.",
-    growthTitle: "Rozwoj",
+      "Zależy mi na rozumieniu API, baz danych, autoryzacji i organizacji logiki po stronie serwera.",
+    growthTitle: "Rozwój",
     growthText:
-      "Buduje portfolio, ktore ma pokazac nie tylko efekt koncowy, ale tez swiadome podejscie do nauki i architektury.",
+      "Buduję portfolio, które ma pokazać nie tylko efekt końcowy, ale też świadome podejście do nauki i architektury.",
   },
   en: {
     eyebrow: "About",

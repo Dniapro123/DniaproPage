@@ -1,4 +1,4 @@
-import type { Language } from "../../App";
+import type { Language } from "../../../App";
 
 type HeroProps = {
   language: Language;
@@ -8,9 +8,9 @@ const content = {
   pl: {
     eyebrow: "Junior / Full-stack Developer",
     title:
-      "Buduje nowoczesne aplikacje webowe z naciskiem na czytelny kod i rozwoj krok po kroku.",
+      "Buduje nowoczesne aplikacje webowe z oraz backend ze skupieniem na czytelnym kodzie i stabilnym rozwoju.",
     description:
-      "To portfolio bedzie miejscem, w ktorym pokaze swoje projekty frontendowe i backendowe: React, Angular, Spring Boot, PL/SQL oraz Django.",
+      "To portfolio jest miejscem, w ktorym przedstawiam swoje projekty frontendowe i backendowe.",
     projects: "Zobacz projekty",
     contact: "Skontaktuj sie",
     direction: "Kierunek",
@@ -23,9 +23,9 @@ const content = {
   en: {
     eyebrow: "Junior / Full-stack Developer",
     title:
-      "I build modern web applications with a strong focus on readable code and steady growth.",
+      "I build modern web applications and backend serviceswith a strong focus on readable code and steady growth.",
     description:
-      "This portfolio will showcase my frontend and backend projects: React, Angular, Spring Boot, PL/SQL, and Django.",
+      "This portfolio is a showcase of my frontend and backend projects.",
     projects: "See projects",
     contact: "Get in touch",
     direction: "Direction",
