@@ -2,9 +2,9 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
   gap: 1.5rem;
   max-width: 1440px;
   margin: 0 auto;
@@ -30,18 +30,21 @@
 
 .nav {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 
-.nav a {
+.nav a,
+.mobileNav a {
   color: var(--color-muted);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s ease;
 }
 
-.nav a:hover {
+.nav a:hover,
+.mobileNav a:hover {
   color: var(--color-text);
 }
 
@@ -64,8 +67,66 @@
   border-color: var(--color-accent);
 }
 
+.menuButton {
+  display: none;
+}
+
+.mobileNav {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .header {
+    grid-template-columns: auto 1fr;
+    padding: 1rem;
+  }
+
   .nav {
     display: none;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+
+  .mobileNav {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: var(--color-panel);
+  }
+
+  .mobileNav a {
+    display: block;
+    padding: 0.75rem 0.85rem;
+    border-radius: 0.75rem;
+  }
+
+  .mobileNav a:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+@media (max-width: 420px) {
+  .actions {
+    gap: 0.4rem;
+  }
+
+  .actions button {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
   }
 }

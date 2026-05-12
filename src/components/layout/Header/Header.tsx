@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Language, Theme } from "../../../App";
 import styles from "./Header.module.css";
 
@@ -8,24 +9,30 @@ type HeaderProps = {
   onToggleTheme: () => void;
 };
 
-
-
 const labels = {
   pl: {
-    hero: "Hero",
+    hero: "Start",
     about: "O mnie",
     technologies: "Technologie",
     projects: "Projekty",
-    contact: "Kontakt"
+    contact: "Kontakt",
+    menu: "Menu",
+    close: "Zamknij",
+    light: "Jasny",
+    dark: "Ciemny",
   },
   en: {
     hero: "Hero",
     about: "About",
     technologies: "Technologies",
     projects: "Projects",
-    contact: "Contact"
-  }
-};
+    contact: "Contact",
+    menu: "Menu",
+    close: "Close",
+    light: "Light",
+    dark: "Dark",
+  },
+} as const;
 
 function Header({
   language,
@@ -33,16 +40,21 @@ function Header({
   onToggleLanguage,
   onToggleTheme,
 }: HeaderProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const copy = labels[language];
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className={styles.header}>
-      <a href="#hero" className={styles.logo}>
+      <a href="#hero" className={styles.logo} onClick={closeMenu}>
         UB
       </a>
 
       <nav className={styles.nav}>
-         <a href="#hero">{copy.hero}</a>
+        <a href="#hero">{copy.hero}</a>
         <a href="#about">{copy.about}</a>
         <a href="#technologies">{copy.technologies}</a>
         <a href="#projects">{copy.projects}</a>
@@ -55,9 +67,39 @@ function Header({
         </button>
 
         <button type="button" onClick={onToggleTheme}>
-          {theme === "dark" ? "Light" : "Dark"}
+          {theme === "dark" ? copy.light : copy.dark}
+        </button>
+
+        <button
+          type="button"
+          className={styles.menuButton}
+          onClick={() => setIsMenuOpen((current) => !current)}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+        >
+          {isMenuOpen ? copy.close : copy.menu}
         </button>
       </div>
+
+      {isMenuOpen && (
+        <nav id="mobile-navigation" className={styles.mobileNav}>
+          <a href="#hero" onClick={closeMenu}>
+            {copy.hero}
+          </a>
+          <a href="#about" onClick={closeMenu}>
+            {copy.about}
+          </a>
+          <a href="#technologies" onClick={closeMenu}>
+            {copy.technologies}
+          </a>
+          <a href="#projects" onClick={closeMenu}>
+            {copy.projects}
+          </a>
+          <a href="#contact" onClick={closeMenu}>
+            {copy.contact}
+          </a>
+        </nav>
+      )}
     </header>
   );
 }
