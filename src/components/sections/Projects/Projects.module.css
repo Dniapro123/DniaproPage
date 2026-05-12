@@ -1,0 +1,125 @@
+.projectsGrid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .projectsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.projectCard {
+  display: flex;
+  min-height: 275px;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.015);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+.category {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.title {
+  margin: 0.75rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.description {
+  margin: 0.9rem 0 0;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.stackList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.stackItem {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  padding: 0.55rem 0.95rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.link:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.primaryLink {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.primaryLink:hover {
+  color: var(--color-bg);
+  opacity: 0.9;
+}

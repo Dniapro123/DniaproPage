@@ -1,5 +1,6 @@
 import type { Language } from "../../../App";
 import SectionTitle from "../../ui/SectionTitle";
+import styles from "./Contact.module.css";
 
 type ContactProps = {
   language: Language;
@@ -8,21 +9,21 @@ type ContactProps = {
 const content = {
   pl: {
     eyebrow: "Kontakt",
-    title: "Proszę się zkontaktować przez.",
+    title: "Porozmawiajmy o współpracy.",
     description:
-      "Proszę sie zkontaktować ze mną za pomocą jednej z poniższych metod.",
+      "Jestem otwarty na oferty stażu, stanowiska junior developera oraz projekty, w których mogę rozwijać umiejętności frontendowe i backendowe.",
     email: "u.budziankou@outlook.com",
     github: "https://github.com/Dniapro123",
     linkedin: "*Czasowo w trakcie weryfikacji",
   },
   en: {
     eyebrow: "Contact",
-    title: "Please contact me via the methods below.",
+    title: "Let’s talk about working together.",
     description:
-      "Please feel free to reach out to me.",
+      "I am open to internship opportunities, junior developer roles, and projects where I can grow my frontend and backend skills.",
     email: "u.budziankou@outlook.com",
     github: "https://github.com/Dniapro123",
-    linkedin: "*Temporary under verification",
+    linkedin: "*Temporarily under verification",
   },
 } as const;
 
@@ -30,38 +31,37 @@ function Contact({ language }: ContactProps) {
   const copy = content[language];
 
   return (
-    <section id="contact" className="section-shell pb-24">
+    <section id="contact" className="section-shell">
       <div className="panel">
-        <SectionTitle eyebrow={copy.eyebrow} title={copy.title} description={copy.description} />
+        <SectionTitle
+          eyebrow={copy.eyebrow}
+          title={copy.title}
+          description={copy.description}
+        />
 
-       <div className="grid gap-5 md:grid-cols-3">
+        <div className={styles.contactGrid}>
           <a
-            href={`mailto:${copy.email}`}
-            className="block rounded-2xl border border-[var(--color-border)] p-6 transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-lg"
+            href={`mailto:${copy.email}?subject=Kontakt%20z%20portfolio`}
+            className={styles.contactCard}
           >
-            <p className="mt-2 text-lg font-semibold">Mail:</p>
-            <p className="text-sm muted-text">{copy.email}</p>
+            <p className={styles.label}>Email</p>
+            <p className={`${styles.value} muted-text`}>{copy.email}</p>
           </a>
 
           <a
             href={copy.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="block rounded-2xl border border-[var(--color-border)] p-6 transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-lg"
+            className={styles.contactCard}
           >
-            <p className="mt-2 text-lg font-semibold">GitHub:</p>
-            <p className="text-sm muted-text">{copy.github}</p>
+            <p className={styles.label}>GitHub</p>
+            <p className={`${styles.value} muted-text`}>{copy.github}</p>
           </a>
 
-          <a
-            href={copy.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-2xl border border-[var(--color-border)] p-6 transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-lg"
-          >
-            <p className="mt-2 text-lg font-semibold">LinkedIn:</p>
-            <p className="text-sm muted-text">{copy.linkedin}</p>
-          </a>
+          <div className={styles.contactCard}>
+            <p className={styles.label}>LinkedIn</p>
+            <p className={`${styles.value} muted-text`}>{copy.linkedin}</p>
+          </div>
         </div>
       </div>
     </section>

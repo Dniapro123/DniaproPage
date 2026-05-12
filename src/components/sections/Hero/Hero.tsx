@@ -1,5 +1,5 @@
 import type { Language } from "../../../App";
-
+import styles from "./Hero.module.css";
 type HeroProps = {
   language: Language;
 };
@@ -8,22 +8,22 @@ const content = {
   pl: {
     eyebrow: "Junior / Full-stack Developer",
     title:
-      "Buduje nowoczesne aplikacje webowe z oraz backend ze skupieniem na czytelnym kodzie i stabilnym rozwoju.",
+      "Buduję nowoczesne aplikacje webowe oraz backend ze skupieniem na czytelnym kodzie i stabilnym rozwoju.",
     description:
       "To portfolio jest miejscem, w ktorym przedstawiam swoje projekty frontendowe i backendowe.",
     projects: "Zobacz projekty",
-    contact: "Skontaktuj sie",
+    contact: "Skontaktuj się",
     direction: "Kierunek",
     stack: "Stack",
     goal: "Cel",
     directionValue: "Frontend + Backend",
     stackValue: "React, TypeScript, API",
-    goalValue: "Pierwsza mocna praca w IT",
+    goalValue: "Rozwinąć silne umiejętności zawodowe",
   },
   en: {
     eyebrow: "Junior / Full-stack Developer",
     title:
-      "I build modern web applications and backend serviceswith a strong focus on readable code and steady growth.",
+      "I build modern web applications and backend services with a strong focus on readable code and steady growth.",
     description:
       "This portfolio is a showcase of my frontend and backend projects.",
     projects: "See projects",
@@ -33,7 +33,7 @@ const content = {
     goal: "Goal",
     directionValue: "Frontend + Backend",
     stackValue: "React, TypeScript, API",
-    goalValue: "First strong role in IT",
+    goalValue: "To develope a strong professional skills",
   },
 } as const;
 
@@ -41,44 +41,59 @@ function Hero({ language }: HeroProps) {
   const copy = content[language];
 
   return (
-    <section id="hero" className="section-shell pt-16 md:pt-24">
-      <div className="panel overflow-hidden">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_0.8fr] lg:items-end">
-          <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.35em] muted-text">{copy.eyebrow}</p>
-            <h1 className="max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
+      <section id="hero" className="section-shell">
+      <div className="panel">
+        <div className={styles.hero}>
+          <div className={styles.content}>
+            <p className={`${styles.eyebrow} muted-text`}>
+              {copy.eyebrow}
+            </p>
+
+            <h1 className={styles.title}>
               {copy.title}
             </h1>
-            <p className="max-w-2xl text-lg leading-8 muted-text">{copy.description}</p>
 
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#projects"
-                className="primary-button rounded-full px-6 py-3 text-center text-sm font-medium transition hover:opacity-85"
-              >
+            <p className={`${styles.description} muted-text`}>
+              {copy.description}
+            </p>
+
+            <div className={styles.actions}>
+              <a href="#projects" className={styles.primaryButton}>
                 {copy.projects}
               </a>
-              <a
-                href="#contact"
-                className="rounded-full border border-[var(--color-border)] px-6 py-3 text-center text-sm font-medium transition hover:bg-[var(--color-surface-muted)]"
-              >
+
+              <a href="#contact" className={styles.secondaryButton}>
                 {copy.contact}
               </a>
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-            <article className="rounded-2xl border border-[var(--color-border)] p-5">
-              <p className="text-sm muted-text">{copy.direction}</p>
-              <p className="mt-2 text-xl font-semibold">{copy.directionValue}</p>
+          <div className={styles.infoGrid}>
+            <article className={styles.infoCard}>
+              <p className={`${styles.infoLabel} muted-text`}>
+                {copy.direction}
+              </p>
+              <p className={styles.infoValue}>
+                {copy.directionValue}
+              </p>
             </article>
-            <article className="rounded-2xl border border-[var(--color-border)] p-5">
-              <p className="text-sm muted-text">{copy.stack}</p>
-              <p className="mt-2 text-xl font-semibold">{copy.stackValue}</p>
+
+            <article className={styles.infoCard}>
+              <p className={`${styles.infoLabel} muted-text`}>
+                {copy.stack}
+              </p>
+              <p className={styles.infoValue}>
+                {copy.stackValue}
+              </p>
             </article>
-            <article className="rounded-2xl border border-[var(--color-border)] p-5">
-              <p className="text-sm muted-text">{copy.goal}</p>
-              <p className="mt-2 text-xl font-semibold">{copy.goalValue}</p>
+
+            <article className={styles.infoCard}>
+              <p className={`${styles.infoLabel} muted-text`}>
+                {copy.goal}
+              </p>
+              <p className={styles.infoValue}>
+                {copy.goalValue}
+              </p>
             </article>
           </div>
         </div>

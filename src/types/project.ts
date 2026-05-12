@@ -11,4 +11,6 @@ export type Project = {
   stack: string[];
   githubUrl?: string;
   liveUrl?: string;
+  status?: "planned" | "in-progress" | "completed";
+
 };

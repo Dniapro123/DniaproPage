@@ -1,0 +1,105 @@
+.hero {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  }
+}
+
+.content {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+}
+
+.title {
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(2.1rem, 4.2vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.04em;
+}
+
+.description {
+  margin-top: 1.5rem;
+  max-width: 620px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.primaryButton {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border: 1px solid var(--color-text);
+}
+
+.secondaryButton {
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-2px);
+}
+
+.secondaryButton:hover {
+  border-color: var(--color-accent);
+}
+
+.infoGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.infoCard {
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.infoLabel {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.infoValue {
+  margin: 0.5rem 0 0;
+  font-weight: 700;
+}

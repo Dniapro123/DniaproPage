@@ -1,5 +1,6 @@
 import type { Language } from "../../../App";
 import SectionTitle from "../../ui/SectionTitle";
+import styles from "./About.module.css";
 
 type AboutProps = {
   language: Language;
@@ -8,33 +9,35 @@ type AboutProps = {
 const content = {
   pl: {
     eyebrow: "O mnie",
-    title: "Rozwijam się jako developer, który chce rozumieć cały przepływ aplikacji.",
+    title:
+      "Rozwijam się jako full-stack developer z technicznym wykształceniem i doświadczeniem stażowym.",
     description:
-      "Interesuje mnie budowanie pełnych rozwiązań: od interfejsu użytkownika, przez logikę aplikacji, po komunikację z bazą danych i API.",
+      "W 2026 roku ukończyłem Politechnikę Wrocławską na kierunku Informatyka Techniczna, specjalność Systemy i Sieci Komputerowe. Mam również roczne doświadczenie stażowe zdobyte w firmie GlobalLogic. Buduję projekty frontendowe i backendowe, aby rozwijać praktyczne umiejętności w pracy z aplikacjami webowymi, API, bazami danych i wdrażaniem projektów.",
     frontendTitle: "Frontend",
     frontendText:
-      "Chce tworzyć czytelne, responsywne interfejsy i rozwijać dobre nawyki pracy z komponentami.",
+      "Pracuję z React, Angular, TypeScript, HTML i CSS. Skupiam się na budowaniu czytelnych, responsywnych interfejsów oraz dobrym podziale aplikacji na komponenty.",
     backendTitle: "Backend",
     backendText:
-      "Zależy mi na rozumieniu API, baz danych, autoryzacji i organizacji logiki po stronie serwera.",
-    growthTitle: "Rozwój",
+      "Rozwijam umiejętności backendowe w Java, Spring Boot, REST API, Python, Django oraz SQL. Interesuje mnie pełny przepływ danych: od interfejsu użytkownika, przez logikę aplikacji, aż po bazę danych.",
+    growthTitle: "Języki i rozwój",
     growthText:
-      "Buduję portfolio, które ma pokazać nie tylko efekt końcowy, ale też świadome podejście do nauki i architektury.",
+      "Znam język polski, angielski, rosyjski, białoruski i ukraiński. Aktualnie rozwijam portfolio projektów oraz uczę się niemieckiego z celem osiągnięcia poziomu B1.",
   },
-  en: {
+ en: {
     eyebrow: "About",
-    title: "I am growing as a developer who wants to understand the full flow of an application.",
+    title:
+      "I am developing as a full-stack developer with a technical background and internship experience.",
     description:
-      "I am interested in building complete solutions: from the user interface, through application logic, to database and API communication.",
+      "In 2026, I graduated from Wrocław University of Science and Technology in Technical Computer Science, specializing in Computer Systems and Networks. I also gained one year of internship experience at GlobalLogic. I build frontend and backend projects to develop practical skills in web applications, APIs, databases, and deployment.",
     frontendTitle: "Frontend",
     frontendText:
-      "I want to create clear, responsive interfaces and build strong habits around component-based development.",
+      "I work with React, Angular, TypeScript, HTML, and CSS. I focus on building readable, responsive interfaces and organizing applications into clear components.",
     backendTitle: "Backend",
     backendText:
-      "I care about understanding APIs, databases, authorization, and backend application structure.",
-    growthTitle: "Growth",
+      "I develop backend skills using Java, Spring Boot, REST API, Python, Django, and SQL. I am interested in the full data flow: from the user interface, through application logic, to the database.",
+    growthTitle: "Languages and growth",
     growthText:
-      "I am building a portfolio that shows not only the final result, but also a thoughtful approach to learning and architecture.",
+      "I speak Polish, English, Russian, Belarusian, and Ukrainian. I am currently expanding my project portfolio and learning German with the goal of reaching B1 level.",
   },
 } as const;
 
@@ -46,20 +49,20 @@ function About({ language }: AboutProps) {
       <div className="panel">
         <SectionTitle eyebrow={copy.eyebrow} title={copy.title} description={copy.description} />
 
-        <div className="grid gap-6 md:grid-cols-3">
-          <article className="rounded-2xl border border-[var(--color-border)] p-6">
-            <h3 className="text-lg font-semibold">{copy.frontendTitle}</h3>
-            <p className="mt-3 leading-7 muted-text">{copy.frontendText}</p>
+        <div className={styles.cardsGrid}>
+          <article className={styles.card}>
+            <h3 className={styles.cardTitle}>{copy.frontendTitle}</h3>
+            <p className={styles.cardText}>{copy.frontendText}</p>
           </article>
 
-          <article className="rounded-2xl border border-[var(--color-border)] p-6">
-            <h3 className="text-lg font-semibold">{copy.backendTitle}</h3>
-            <p className="mt-3 leading-7 muted-text">{copy.backendText}</p>
+          <article className={styles.card}>
+            <h3 className={styles.cardTitle}>{copy.backendTitle}</h3>
+            <p className={styles.cardText}>{copy.backendText}</p>
           </article>
 
-          <article className="rounded-2xl border border-[var(--color-border)] p-6">
-            <h3 className="text-lg font-semibold">{copy.growthTitle}</h3>
-            <p className="mt-3 leading-7 muted-text">{copy.growthText}</p>
+          <article className={styles.card}>
+            <h3 className={styles.cardTitle}>{copy.growthTitle}</h3>
+            <p className={styles.cardText}>{copy.growthText}</p>
           </article>
         </div>
       </div>

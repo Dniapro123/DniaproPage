@@ -1,6 +1,7 @@
 import type { Language } from "../../../App";
 import SectionTitle from "../../ui/SectionTitle";
 import { projects } from "../../../data/projects";
+import style from "./Projects.module.css";
 
 type ProjectsProps = {
   language: Language;
@@ -9,15 +10,15 @@ type ProjectsProps = {
 const content = {
   pl: {
     eyebrow: "Projekty",
-    title: "Miejsce na projekty, ktore beda rosnac razem z Twoim doswiadczeniem.",
+    title: "Moje projekty.",
     description:
-      "Sekcja jest juz gotowa pod pozniejsze podlaczenie realnych danych i linkow do repozytoriow lub deployow.",
+      "Proszę zobaczyć moje projekty na GitHubie lub za pomocą Live Demo.",
   },
   en: {
     eyebrow: "Projects",
-    title: "A place for projects that will grow together with your experience.",
+    title: "My projects.",
     description:
-      "This section is ready for future real data, repository links, and live deployments.",
+      "Please take a look at my projects on GitHub or through the Live Demo.",
   },
 } as const;
 
@@ -29,50 +30,52 @@ function Projects({ language }: ProjectsProps) {
       <div className="panel">
         <SectionTitle eyebrow={copy.eyebrow} title={copy.title} description={copy.description} />
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className={style.projectsGrid}>
           {projects.map((project) => (
-            <article
-              key={project.slug}
-              className="rounded-3xl border border-[var(--color-border)] p-6 transition hover:-translate-y-1"
-            >
-              <p className="text-sm uppercase tracking-[0.24em] muted-text">
+            <article key={project.slug} className={style.projectCard}>
+              <p className={`${style.category} muted-text`}>
                 {project.category[language]}
               </p>
-              <h3 className="mt-4 text-2xl font-semibold">{project.title[language]}</h3>
-              <p className="mt-4 leading-7 muted-text">{project.description[language]}</p>
 
-              <div className="mt-6 flex flex-wrap gap-2">
+              <h3 className={style.title}>
+                {project.title[language]}
+              </h3>
+
+              <p className={`${style.description} muted-text`}>
+                {project.description[language]}
+              </p>
+
+              <div className={style.stackList}>
                 {project.stack.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs"
-                  >
+                  <span key={item} className={style.stackItem}>
                     {item}
                   </span>
                 ))}
               </div>
-              <div className="mt-6 flex gap-4">
+
+              <div className={style.links}>
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-[var(--color-accent)] transition hover:underline"
+                    className={style.link}
                   >
                     GitHub
                   </a>
                 )}
+
                 {project.liveUrl && (
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-[var(--color-accent)] transition hover:underline"
+                    className={`${style.link} ${style.primaryLink}`}
                   >
-                    Live Demo
+                    Live demo
                   </a>
                 )}
-              </div>  
+              </div>
             </article>
           ))}
         </div>

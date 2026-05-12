@@ -1,0 +1,44 @@
+.sidebar {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
+  background: var(--color-panel);
+}
+
+.label {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+}
+
+.nav {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav a:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+}

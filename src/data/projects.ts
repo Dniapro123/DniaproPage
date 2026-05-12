@@ -7,15 +7,15 @@ export const projects: Project[] = [
       pl: "LumosLib",
       en: "LumosLib",
     },
-    description: {
-      pl: "Aplikacja webowa do wyszukiwania książek, przeglądania szczegółów oraz pracy z katalogiem książek. Projekt wykorzystuje Angular, TypeScript, backend Express oraz Google Books API.",
-      en: "A web application for searching books, browsing details, and working with a book catalogue. The project uses Angular, TypeScript, an Express backend, and Google Books API.",
+   description: {
+      pl: "Aplikacja webowa do wyszukiwania książek, przeglądania szczegółów i pracy z katalogiem. Projekt wykorzystuje Angular, Express oraz Google Books API.",
+      en: "A web app for searching books, browsing details and working with a catalogue. The project uses Angular, Express and Google Books API.",
     },
     category: {
       pl: "Projekt w trakcie wdrażania",
       en: "Deployment in progress",
     },
-    stack: ["Angular", "TypeScript", "Node.js", "Express", "Prisma", "Google Books API"],
+    stack: ["Angular", "TypeScript", "Node.js", "Express"],
     githubUrl: "https://github.com/Dniapro123/Lumos-Lib",
     // liveUrl: "https://tutaj-bedzie-link-do-demo",
   },
