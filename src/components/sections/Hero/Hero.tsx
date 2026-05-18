@@ -1,5 +1,6 @@
 import type { Language } from "../../../App";
 import styles from "./Hero.module.css";
+
 type HeroProps = {
   language: Language;
 };
@@ -8,32 +9,32 @@ const content = {
   pl: {
     eyebrow: "Junior / Full-stack Developer",
     title:
-      "Buduję nowoczesne aplikacje webowe oraz backend ze skupieniem na czytelnym kodzie i stabilnym rozwoju.",
+      "Buduję aplikacje webowe i usługi backendowe.",
     description:
-      "To portfolio jest miejscem, w ktorym przedstawiam swoje projekty frontendowe i backendowe.",
+      "Tworzę projekty z użyciem React, Angular, TypeScript, Java Spring Boot, API i innych technologi. Skupiam się na czytelnym kodzie, strukturze aplikacji i praktycznym rozwiązywaniu problemów.",
     projects: "Zobacz projekty",
     contact: "Skontaktuj się",
     direction: "Kierunek",
     stack: "Stack",
-    goal: "Cel",
+    goal: "Dostępność",
     directionValue: "Frontend + Backend",
-    stackValue: "React, TypeScript, API",
-    goalValue: "Rozwinąć silne umiejętności zawodowe",
+    stackValue: "React, TypeScript, API, Java, Spring Boot",
+    goalValue: "Otwarty na oferty Junior Developer",
   },
   en: {
     eyebrow: "Junior / Full-stack Developer",
     title:
-      "I build modern web applications and backend services with a strong focus on readable code and steady growth.",
+      "I build web applications and backend services.",
     description:
-      "This portfolio is a showcase of my frontend and backend projects.",
+      "I create projects using React, Angular, TypeScript, Java Spring Boot, API and other technologies. I focus on clean code, application structure and practical problem solving.",
     projects: "See projects",
     contact: "Get in touch",
     direction: "Direction",
     stack: "Stack",
-    goal: "Goal",
+    goal: "Availability",
     directionValue: "Frontend + Backend",
-    stackValue: "React, TypeScript, API",
-    goalValue: "To develope a strong professional skills",
+    stackValue: "React, TypeScript, API, Java, Spring Boot",
+    goalValue: "Open to Junior Developer roles",
   },
 } as const;
 

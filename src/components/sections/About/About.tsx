@@ -10,34 +10,49 @@ const content = {
   pl: {
     eyebrow: "O mnie",
     title:
-      "Rozwijam się jako full-stack developer z technicznym wykształceniem i doświadczeniem stażowym.",
+      "Junior Web Developer z wykształceniem inżynierskim i doświadczeniem komercyjnym w GlobalLogic.",
     description:
-      "W 2026 roku ukończyłem Politechnikę Wrocławską na kierunku Informatyka Techniczna, specjalność Systemy i Sieci Komputerowe. Mam również roczne doświadczenie stażowe zdobyte w firmie GlobalLogic. Buduję projekty frontendowe i backendowe, aby rozwijać praktyczne umiejętności w pracy z aplikacjami webowymi, API, bazami danych i wdrażaniem projektów.",
+      "Ukończyłem Informatykę na Politechnice Wrocławskiej, uzyskując tytuł inżyniera w lutym 2026 roku. Rozwijam się jako full-stack developer, łącząc frontend, integrację z REST API, backend oraz pracę z relacyjnymi bazami danych.",
+
     frontendTitle: "Frontend",
     frontendText:
-      "Pracuję z React, Angular, TypeScript, HTML i CSS. Skupiam się na budowaniu czytelnych, responsywnych interfejsów oraz dobrym podziale aplikacji na komponenty.",
-    backendTitle: "Backend",
+      "Tworzę responsywne interfejsy z użyciem JavaScript ES6+, TypeScript, React, Angular, HTML5 i CSS3. Skupiam się na czytelnej strukturze komponentów, integracji z API oraz dobrym doświadczeniu użytkownika.",
+
+    backendTitle: "Backend i bazy danych",
     backendText:
-      "Rozwijam umiejętności backendowe w Java, Spring Boot, REST API, Python, Django oraz SQL. Interesuje mnie pełny przepływ danych: od interfejsu użytkownika, przez logikę aplikacji, aż po bazę danych.",
-    growthTitle: "Języki i rozwój",
-    growthText:
-      "Znam język polski, angielski, rosyjski, białoruski i ukraiński. Aktualnie rozwijam portfolio projektów oraz uczę się niemieckiego z celem osiągnięcia poziomu B1.",
+      "Mam doświadczenie z Node.js, Express.js, Java, Spring Boot oraz REST API. Pracuję również z PostgreSQL, Oracle SQL, PL/SQL i H2, projektując logikę aplikacji oraz struktury danych potrzebne w pełnym przepływie aplikacji.",
+
+    experienceTitle: "Doświadczenie — GlobalLogic",
+    experienceText:
+      "Podczas stażu w GlobalLogic pracowałem nad Project Coordination System — wewnętrznym systemem wspierającym project managerów i team leadów w koordynowaniu pracy zespołów, zarządzaniu zadaniami oraz monitorowaniu postępów. W projekcie rozwijałem funkcjonalności full-stack, tworzyłem komponenty UI, integrowałem aplikację z REST API, pracowałem z logiką backendową, schematami relacyjnej bazy danych oraz wdrożeniem w Azure w środowisku Agile/SCRUM.",
+
+    languagesTitle: "Języki",
+    languagesText:
+      "Polski — C1, angielski — B2, białoruski — ojczysty, rosyjski — ojczysty, ukraiński — C1. Aktualnie rozwijam również znajomość języka niemieckiego z celem osiągnięcia poziomu B1.",
   },
- en: {
+
+  en: {
     eyebrow: "About",
     title:
-      "I am developing as a full-stack developer with a technical background and internship experience.",
+      "Junior Web Developer with an engineering degree and commercial experience at GlobalLogic.",
     description:
-      "In 2026, I graduated from Wrocław University of Science and Technology in Technical Computer Science, specializing in Computer Systems and Networks. I also gained one year of internship experience at GlobalLogic. I build frontend and backend projects to develop practical skills in web applications, APIs, databases, and deployment.",
+      "I graduated in Computer Science from Wrocław University of Science and Technology, earning my Bachelor of Engineering degree in February 2026. I am developing as a full-stack developer, combining frontend development, REST API integration, backend logic and relational databases.",
+
     frontendTitle: "Frontend",
     frontendText:
-      "I work with React, Angular, TypeScript, HTML, and CSS. I focus on building readable, responsive interfaces and organizing applications into clear components.",
-    backendTitle: "Backend",
+      "I build responsive interfaces using JavaScript ES6+, TypeScript, React, Angular, HTML5 and CSS3. I focus on clean component structure, API integration and a smooth user experience.",
+
+    backendTitle: "Backend and databases",
     backendText:
-      "I develop backend skills using Java, Spring Boot, REST API, Python, Django, and SQL. I am interested in the full data flow: from the user interface, through application logic, to the database.",
-    growthTitle: "Languages and growth",
-    growthText:
-      "I speak Polish, English, Russian, Belarusian, and Ukrainian. I am currently expanding my project portfolio and learning German with the goal of reaching B1 level.",
+      "I have experience with Node.js, Express.js, Java, Spring Boot and REST APIs. I also work with PostgreSQL, Oracle SQL, PL/SQL and H2, designing application logic and data structures for full application flows.",
+
+    experienceTitle: "Experience — GlobalLogic",
+    experienceText:
+      "During my internship at GlobalLogic, I worked on a Project Coordination System — an internal platform designed to support project managers and team leads in coordinating team work, managing tasks and monitoring progress. I developed full-stack features, created UI components, integrated the application with REST APIs, worked with backend logic, relational database schemas and Azure deployment in an Agile/SCRUM environment.",
+
+    languagesTitle: "Languages",
+    languagesText:
+      "Polish — C1, English — B2, Belarusian — native, Russian — native, Ukrainian — C1. I am also currently learning German with the goal of reaching B1 level.",
   },
 } as const;
 
@@ -50,6 +65,12 @@ function About({ language }: AboutProps) {
         <SectionTitle eyebrow={copy.eyebrow} title={copy.title} description={copy.description} />
 
         <div className={styles.cardsGrid}>
+
+          <article className={`${styles.card} ${styles.cardWide}`}>
+            <h3 className={styles.cardTitle}>{copy.experienceTitle}</h3>
+            <p className={styles.cardText}>{copy.experienceText}</p>
+          </article>
+          
           <article className={styles.card}>
             <h3 className={styles.cardTitle}>{copy.frontendTitle}</h3>
             <p className={styles.cardText}>{copy.frontendText}</p>
@@ -60,9 +81,20 @@ function About({ language }: AboutProps) {
             <p className={styles.cardText}>{copy.backendText}</p>
           </article>
 
-          <article className={styles.card}>
+          {/* <article className={styles.card}>
             <h3 className={styles.cardTitle}>{copy.growthTitle}</h3>
             <p className={styles.cardText}>{copy.growthText}</p>
+          </article> */}
+          {/* <article className={styles.card}>
+            <h3 className={styles.cardTitle}>{copy.experienceTitle}</h3>
+            <p className={styles.cardText}>{copy.experienceText}</p>
+          </article> */}
+
+          
+
+          <article className={styles.card}>
+            <h3 className={styles.cardTitle}>{copy.languagesTitle}</h3>
+            <p className={styles.cardText}>{copy.languagesText}</p>
           </article>
         </div>
       </div>

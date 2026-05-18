@@ -5,6 +5,8 @@ function Footer() {
     <footer className={styles.footer}>
       <p>© {new Date().getFullYear()} Uladzislau Budziankou. Portfolio project.</p>
     </footer>
+
+    
   );
 }
 
